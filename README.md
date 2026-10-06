@@ -12,12 +12,14 @@ This is the full corporate-style blueprint I am building inside my physical mach
 
 * **Hypervisor Component:** Oracle VM VirtualBox
 * **Central Gateway Firewall:** OPNsense (FreeBSD 64-bit) - Acting as the perimeter router and traffic inspector.
-* **The Attacker Subnet:** Kali Linux Workspace - Used for security auditing and penetration testing.
-* **The Target Enterprise Subnet:** 
-  * Windows Server (Active Directory Domain Controller)
-  * Windows 10 Enterprise Client (Victim Endpoint)
+* **The Target Enterprise Subnet (Virtual Servers):**
+  * Email Server
+  * Windows Server (Active Directory / Domain Controller / DNS)
   * Ubuntu Linux Server (Production Asset)
-* **The Security Operations Center (SOC) Log Analysis Pipeline:** Elastic Monitoring Server (SIEM) - Collecting security events from the entire environment to spot attacks.
+  * Elastic Monitoring Server (SIEM) - Collecting security events from the entire environment to spot attacks.
+* **The Client Subnet (Virtual Clients):**
+  * Windows 10 Client (Victim Endpoint)
+  * Kali Linux Workspace (Attacker) - Used for security auditing and penetration testing.
 
 ---
 
