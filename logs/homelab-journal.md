@@ -14,8 +14,13 @@ A running log of building my virtual security lab, including what went wrong and
 ```mermaid
 graph LR
     I["Internet<br>via host laptop"] -->|"WAN (NAT)"| F["OPNsense firewall<br>10.200.200.254"]
-    F -->|"LAN (LabNetwork)"| K["Kali Linux<br>attacker"]
-    F -.->|"coming next"| W["Windows Server<br>and Windows 10"]
+    F -->|"LAN (LabNetwork)"| S["Virtual L2 switch"]
+    S --> K["Kali Linux<br>attacker"]
+    S -.-> W["Windows 10<br>client"]
+    S -.-> D["Windows Server<br>AD / DC / DNS"]
+    S -.-> U["Ubuntu Server"]
+    S -.-> M["Email server"]
+    S -.-> E["Elastic monitoring"]
 ```
 
 ## Virtual machines so far
